@@ -1,56 +1,74 @@
-📰 Fake News Detection using Machine Learning
+"Header" (https://capsule-render.vercel.app/api?type=waving&color=0:090979,50:302b63,100:00d4ff&height=220&section=header&text=FAKE%20NEWS%20DETECTOR&fontSize=38&fontColor=ffffff&animation=fadeIn&fontAlignY=38&desc=AI%20%7C%20NLP%20%7C%20MACHINE%20LEARNING&descAlignY=58&descSize=16)
 
-<div align="center">"Typing SVG" (https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=24&pause=1000&color=00D9FF&center=true&vCenter=true&width=750&lines=AI+Powered+Fake+News+Detection;Real+vs+Fake+News+Classification;Machine+Learning+%7C+NLP+%7C+Python)
+<div align="center"><img src="https://readme-typing-svg.demolab.com?font=Orbitron&weight=600&size=22&duration=2500&pause=700&color=00D4FF&center=true&vCenter=true&width=650&lines=Detect+Fake+News+with+Machine+Learning;Powered+by+TF-IDF+%2B+Logistic+Regression;Explore+NLP+in+an+Interactive+Dashboard;Built+with+Python+%26+Streamlit" alt="Animated typing introduction" /><br/>""Python" (https://img.shields.io/badge/Python-3.11-3776AB?style=for-the-badge&logo=python&logoColor=white)" (https://python.org)
+""Streamlit" (https://img.shields.io/badge/Streamlit-App-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)" (https://streamlit.io)
+""Scikit Learn" (https://img.shields.io/badge/Scikit--Learn-ML-F7931E?style=for-the-badge&logo=scikitlearn&logoColor=white)" (https://scikit-learn.org)
+""License" (https://img.shields.io/badge/License-MIT-00C853?style=for-the-badge)" (LICENSE)
+""GitHub Actions" (https://img.shields.io/badge/CI-GitHub_Actions-2088FF?style=for-the-badge&logo=githubactions&logoColor=white)" (.github/workflows/tests.yml)
 
-"Python" (https://img.shields.io/badge/Python-3.11-blue?style=for-the-badge&logo=python)
-"Machine Learning" (https://img.shields.io/badge/Machine-Learning-orange?style=for-the-badge)
-"NLP" (https://img.shields.io/badge/NLP-Text%20Classification-purple?style=for-the-badge)
-"Scikit Learn" (https://img.shields.io/badge/Scikit--Learn-ML-yellow?style=for-the-badge&logo=scikitlearn)
+An intelligent news classification project built with Natural Language Processing and Machine Learning.
 
-</div>🌟 About Project
+</div>---
 
-An AI-powered machine learning application that analyzes news articles and classifies them as Real News or Potentially Fake News using Natural Language Processing.
+◈ 01 — Project Overview
 
-🚀 Features
+Fake News Detector analyzes news text and predicts whether an article is FAKE or REAL using a machine-learning pipeline.
 
-- Fake and real news classification
-- TF-IDF text vectorization
-- Logistic Regression classifier
-- Prediction confidence scores
-- Streamlit dashboard
-- Model evaluation
-- Automated testing
+The project combines text preprocessing, TF-IDF vectorization, and Logistic Regression with a modern Streamlit interface.
 
-🛠️ Technologies
+◈ 02 — Experience
 
-Technology| Purpose
-Python| Programming
-Pandas| Data processing
-NumPy| Numerical operations
-NLTK| Text preprocessing
-Scikit-learn| Machine learning
-TF-IDF| Text vectorization
-Logistic Regression| Classification
-Streamlit| Web dashboard
-Pytest| Testing
+Feature| Description
+🧠 AI Classification| Predict fake or real news
+⚡ NLP Processing| Clean and transform news text
+📊 Confidence Score| Display model confidence
+🎨 Web Interface| Interactive Streamlit dashboard
+🧪 Automated Tests| Pytest and GitHub Actions
+📦 Model Persistence| Save and load trained models
 
-🏗️ Architecture
+◈ 03 — System Architecture
 
 flowchart TD
- A["News Article"] --> B["Text Cleaning"]
- B --> C["TF-IDF Vectorization"]
- C --> D["Logistic Regression"]
- D --> E["Prediction"]
- E --> F["Real News"]
- E --> G["Potentially Fake News"]
+    A["📰 News Article"] --> B["Text Preprocessing"]
+    B --> C["TF-IDF Vectorization"]
+    C --> D["Logistic Regression"]
+    D --> E{"Prediction"}
+    E -->|"Fake"| F["⚠️ Fake News"]
+    E -->|"Real"| G["✅ Real News"]
+    F --> H["Confidence Score"]
+    G --> H
+    H --> I["Streamlit Dashboard"]
 
-📂 Project Structure
+    classDef input fill:#172554,stroke:#38bdf8,color:#fff
+    classDef process fill:#312e81,stroke:#818cf8,color:#fff
+    classDef output fill:#064e3b,stroke:#34d399,color:#fff
+    class A input
+    class B,C,D process
+    class F,G,H,I output
+
+◈ 04 — Technology Stack
+
+<div align="center"><img src="https://skillicons.dev/icons?i=python,git,github,docker&theme=dark" alt="Technology icons"/></div>- Language: Python
+- Machine Learning: Scikit-learn
+- Text Processing: NLP, TF-IDF
+- Classifier: Logistic Regression
+- Interface: Streamlit
+- Testing: Pytest
+- Automation: GitHub Actions
+
+◈ 05 — Repository Structure
 
 fake-news-detection-ml/
 │
 ├── app/
 │   ├── __init__.py
 │   └── streamlit_app.py
+│
+├── data/
+│   └── news.csv
+│
+├── models/
+│   └── .gitkeep
 │
 ├── src/
 │   ├── __init__.py
@@ -61,63 +79,76 @@ fake-news-detection-ml/
 │   └── train.py
 │
 ├── tests/
+│   ├── __init__.py
 │   └── test_model.py
 │
-├── models/
-├── artifacts/
+├── .github/workflows/
+│   └── tests.yml
 │
+├── app.py
 ├── requirements.txt
+├── Dockerfile
+├── runtime.txt
 ├── .gitignore
-├── README.md
 └── LICENSE
 
-⚙️ Installation
+◈ 06 — Installation
+
+Step 1 — Clone the repository
 
 git clone https://github.com/Xhkbasharat/fake-news-detection-ml.git
-
 cd fake-news-detection-ml
+
+Step 2 — Install dependencies
 
 pip install -r requirements.txt
 
-🧠 Train Model
+Step 3 — Prepare the dataset
+
+Create "data/news.csv" with these columns:
+
+text| label
+News article text| real
+News article text| fake
+
+Use a sufficiently large, verified dataset for meaningful model evaluation.
+
+Step 4 — Train the model
 
 python -m training.train
 
-🌐 Run Application
+Step 5 — Launch the application
 
 streamlit run app/streamlit_app.py
 
-📊 Evaluation
+◈ 07 — Testing
 
-- Accuracy
-- Precision
-- Recall
-- F1-score
-- Confusion Matrix
+Run the automated tests:
 
-Add actual test results after training.
+python -m pytest
 
-🔮 Future Improvements
+GitHub Actions also runs the tests when changes are pushed to the main branch.
 
-- [ ] BERT-based news classification
-- [ ] Advanced text preprocessing
-- [ ] Explainable AI
-- [ ] News source verification
-- [ ] Real-time news analysis
-- [ ] Cloud deployment
+◈ 08 — Future Roadmap
 
-👨‍💻 Author
+- [ ] Larger verified news dataset
+- [ ] Improved model evaluation
+- [ ] Advanced NLP models
+- [ ] Live prediction dashboard
+- [ ] News source analysis
+- [ ] Model performance visualizations
+- [ ] Deployment to a public web platform
 
-Xhkbasharat
+◈ 09 — Important Disclaimer
 
-GitHub: "@Xhkbasharat" (https://github.com/Xhkbasharat)
+This is an educational machine-learning project. Model predictions are not verified fact-checks. A prediction should never be treated as proof that an article is true or false.
 
-⭐ Support
+◈ 10 — Developer
 
-Star the repository if you find this project useful!
+<div align="center">Xhkbasharat
 
----
+""GitHub" (https://img.shields.io/badge/GitHub-Xhkbasharat-181717?style=for-the-badge&logo=github)" (https://github.com/Xhkbasharat)
 
-<div align="center">Built with ❤️ using Python and Machine Learning
+Building intelligent applications with Python and AI.
 
-</div>
+</div>"Footer" (https://capsule-render.vercel.app/api?type=waving&color=0:00d4ff,50:302b63,100:090979&height=120&section=footer)
