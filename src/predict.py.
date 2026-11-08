@@ -1,0 +1,23 @@
+import joblib
+from pathlib import Path
+from src.preprocess import clean_text
+
+MODEL_PATH = Path(__file__).resolve().parents[1] / "models" / "fake_news_model.pkl"
+
+
+def predict_news(text):
+    if not MODEL_PATH.exists():
+        raise FileNotFoundError(
+            "Model not found. Run training/train.py first."
+        )
+
+    model = joblib.load(MODEL_PATH)
+    cleaned_text = clean_text(text)
+
+    prediction = model.predict([cleaned_text])[0]
+    confidence = max(model.predict_proba([cleaned_text])[0])
+
+    return {
+        "prediction": str(prediction),
+        "confidence": float(confidence)
+    }
